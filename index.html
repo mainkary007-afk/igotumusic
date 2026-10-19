@@ -1,41 +1,129 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>I GOT U</title>
-<style>
-body {
-  background: #101010;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 40px 15px;
-}
-button {
-  padding: 14px 25px;
-  border: 0;
-  border-radius: 12px;
-  background: #ff4da6;
-  color: white;
-  font-size: 18px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100b1c">
+  <title>✨</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+      background:
+        radial-gradient(ellipse at top, #40205c 0%, transparent 60%),
+        linear-gradient(145deg, #100b1c, #190d27 55%, #080811);
+    }
+
+    .card {
+      width: min(88%, 370px);
+      padding: 38px 24px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 28px;
+      background: rgba(255,255,255,.055);
+      box-shadow: 0 0 60px rgba(188, 70, 255, .16);
+      backdrop-filter: blur(16px);
+      animation: appear 1s ease both;
+    }
+
+    .icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 28px;
+      display: grid;
+      place-items: center;
+      font-size: 43px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ff54b8, #8655ff);
+      box-shadow: 0 0 35px rgba(207, 74, 255, .35);
+    }
+
+    h1 {
+      font-size: 25px;
+      line-height: 1.4;
+      margin: 0 0 12px;
+      font-weight: 700;
+    }
+
+    p {
+      color: #c8bcd7;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    button {
+      width: 100%;
+      padding: 17px 12px;
+      border: 0;
+      border-radius: 15px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      background: linear-gradient(100deg, #ff4eb8, #8a52ff);
+      box-shadow: 0 7px 28px rgba(174, 63, 255, .25);
+      cursor: pointer;
+      transition: transform .2s, filter .2s;
+    }
+
+    button:active {
+      transform: scale(.96);
+      filter: brightness(1.2);
+    }
+
+    #message {
+      margin: 20px 0 0;
+      font-size: 13px;
+      color: #ffb9e7;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-<h1>🎵 I GOT U</h1>
-<p>Gay Remix</p>
+  <main class="card" id="card">
+    <div class="icon">✦</div>
 
-<audio id="music" controls preload="metadata">
-  <source src="./music.mp3" type="audio/mpeg">
-  Твой браузер не поддерживает аудио.
-</audio>
+    <h1>Нажмите, чтобы закрыть</h1>
+    <p>♡ Хорошего дня ♡</p>
 
-<p>
-  <button onclick="document.getElementById('music').play()">
-    ▶ Включить музыку
-  </button>
-</p>
+    <button id="closeButton">
+      ✕ Закрыть
+    </button>
+
+    <div id="message" class="hidden">
+      Чтобы выйти, нажмите «Назад» в браузере.
+    </div>
+  </main>
+
+  <script>
+    const button = document.getElementById("closeButton");
+    const message = document.getElementById("message");
+
+    button.addEventListener("click", () => {
+      window.close();
+
+      setTimeout(() => {
+        message.classList.remove("hidden");
+      }, 200);
+    });
+  </script>
 </body>
 </html>
