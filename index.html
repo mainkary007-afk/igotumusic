@@ -64,6 +64,7 @@
     button.addEventListener('click', async () => {
       if (music.paused) {
         try {
+          music.volume = 1.0;
           await music.play();
           hint.textContent = 'До свидания';
         } catch {
