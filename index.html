@@ -1,68 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101010">
-  <title>I GOT U — Gay Remix</title>
-  <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: #101010;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-
-    .player {
-      width: min(90%, 360px);
-      padding: 28px;
-      text-align: center;
-      background: #202020;
-      border-radius: 24px;
-    }
-
-    .cover {
-      height: 220px;
-      display: grid;
-      place-items: center;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #ff4da6, #713cff);
-      font-size: 80px;
-    }
-
-    h1 { margin-top: 24px; }
-    p { color: #bbb; }
-
-    audio {
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    .note {
-      font-size: 13px;
-      line-height: 1.5;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I GOT U</title>
+<style>
+body {
+  background: #101010;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px 15px;
+}
+button {
+  padding: 14px 25px;
+  border: 0;
+  border-radius: 12px;
+  background: #ff4da6;
+  color: white;
+  font-size: 18px;
+}
+</style>
 </head>
 <body>
-  <main class="player">
-    <div class="cover">♫</div>
-    <h1>I GOT U</h1>
-    <p>Gay Remix</p>
+<h1>🎵 I GOT U</h1>
+<p>Gay Remix</p>
 
-    <audio controls preload="none">
-      <source src="music.mp3" type="audio/mpeg">
-      Твой браузер не поддерживает аудио.
-    </audio>
+<audio id="music" controls preload="metadata">
+  <source src="./music.mp3" type="audio/mpeg">
+  Твой браузер не поддерживает аудио.
+</audio>
 
-    <p class="note">
-      Нажми ▶ для воспроизведения.
-    </p>
-  </main>
+<p>
+  <button onclick="document.getElementById('music').play()">
+    ▶ Включить музыку
+  </button>
+</p>
 </body>
 </html>
