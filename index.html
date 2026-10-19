@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>I GOT U — Gay Remix</title>
   <meta name="theme-color" content="#101010">
+  <title>I GOT U — Gay Remix</title>
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -16,38 +17,36 @@
       color: white;
       font-family: Arial, sans-serif;
     }
+
     .player {
       width: min(90%, 360px);
-      padding: 30px 24px;
+      padding: 28px;
       text-align: center;
       background: #202020;
-      border: 1px solid #383838;
       border-radius: 24px;
     }
+
     .cover {
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 24px;
+      height: 220px;
       display: grid;
       place-items: center;
-      border-radius: 20px;
+      border-radius: 18px;
       background: linear-gradient(135deg, #ff4da6, #713cff);
-      font-size: 58px;
+      font-size: 80px;
     }
-    h1 { font-size: 25px; margin: 10px 0; }
+
+    h1 { margin-top: 24px; }
     p { color: #bbb; }
-    button {
+
+    audio {
       width: 100%;
-      padding: 16px;
-      border: 0;
-      border-radius: 14px;
-      background: #ff4da6;
-      color: white;
-      font-size: 17px;
-      font-weight: bold;
-      cursor: pointer;
+      margin-top: 20px;
     }
-    .note { font-size: 12px; margin-top: 18px; }
+
+    .note {
+      font-size: 13px;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
@@ -55,25 +54,15 @@
     <div class="cover">♫</div>
     <h1>I GOT U</h1>
     <p>Gay Remix</p>
-    <button id="play">▶ Открыть музыку</button>
+
+    <audio controls preload="none">
+      <source src="music.mp3" type="audio/mpeg">
+      Твой браузер не поддерживает аудио.
+    </audio>
+
     <p class="note">
-      Если звук не запускается автоматически,
-      нажми кнопку воспроизведения на странице трека.
+      Нажми ▶ для воспроизведения.
     </p>
   </main>
-
-  <script>
-    const track = "https://uwupad.me/sound/70843";
-
-    document.getElementById("play").addEventListener("click", () => {
-      window.location.href = track;
-    });
-
-    // Пробуем открыть трек автоматически.
-    // Браузер может потребовать действия пользователя.
-    window.addEventListener("load", () => {
-      window.location.replace(track);
-    });
-  </script>
 </body>
 </html>
