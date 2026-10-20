@@ -65,7 +65,7 @@
       if (music.paused) {
         try {
           music.volume = 1.0;
-          music.playbackRate = 1.0;
+          music.playbackRate = 0.7;
           await music.play();
           hint.textContent = 'Привет';
         } catch {
