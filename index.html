@@ -65,15 +65,15 @@
       if (music.paused) {
         try {
           music.volume = 1.0;
-          music.playbackRate = 1.6;
+          music.playbackRate = 1.0;
           await music.play();
-          hint.textContent = 'До свидания';
+          hint.textContent = 'Привет';
         } catch {
           hint.textContent = 'Давай ты сможешь ещё чуть чуть!';
         }
       } else {
         music.pause();
-        hint.textContent = 'Привет';
+        hint.textContent = 'До свидания';
       }
     });
   </script>
